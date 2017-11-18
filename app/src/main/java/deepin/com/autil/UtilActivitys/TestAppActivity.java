@@ -1,34 +1,31 @@
-package deepin.com.autil;
+package deepin.com.autil.UtilActivitys;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import deepin.com.autil.UtilActivitys.TestAppActivity;
-import deepin.com.autil.UtilActivitys.TestPopupDialogActivity;
-import deepin.com.autil.UtilActivitys.TestVoiceActivity;
+import deepin.com.autil.R;
+import deepin.com.utils.AppUtils;
 
-public class MainActivity extends Activity {
-
+public class TestAppActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_app);
 
         final List<String> list=new ArrayList<String>();
-        list.add("voice");
-        list.add("popup_dialog");
-        list.add("app");
+        list.add("getVersionName");
+        list.add("getPackageName");
 
         ListView listView = new ListView(this);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
@@ -36,22 +33,21 @@ public class MainActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String strResult;
                 switch (list.get(i)) {
-                    case "voice":
-                        startActivity(new Intent(getApplication(), TestVoiceActivity.class));
+                    case "getVersionName":
+                        strResult = AppUtils.getVersionName(TestAppActivity.this);
+                        Toast.makeText(TestAppActivity.this, strResult, Toast.LENGTH_SHORT).show();
                         break;
-                    case "popup_dialog":
-                        startActivity(new Intent(getApplication(), TestPopupDialogActivity.class));
+                    case "getPackageName":
+                        strResult = AppUtils.getPackageName(TestAppActivity.this);
+                        Toast.makeText(TestAppActivity.this, strResult, Toast.LENGTH_SHORT).show();;
                         break;
-                    case "app":
-                        startActivity(new Intent(getApplication(), TestAppActivity.class));
-                        break;
+
                     default:break;
 
                 }
             }
         });
-
-
     }
 }
