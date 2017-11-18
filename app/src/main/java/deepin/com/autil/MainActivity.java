@@ -11,6 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.SdkApp;
 import deepin.com.autil.TestActivitys.TestAppActivity;
 import deepin.com.autil.TestActivitys.TestDisplayUtils;
 import deepin.com.autil.TestActivitys.TestPackageUtils;
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SdkApp.getIns().init(this);
 
         final List<String> list=new ArrayList<String>();
         list.add("SystemUtils");

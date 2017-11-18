@@ -15,6 +15,7 @@ import java.util.List;
 
 import deepin.com.utils.DisplayUtils;
 import deepin.com.utils.RandomUtils;
+import deepin.com.utils.ToastUtil;
 
 public class TestRandomUtils extends Activity {
 
@@ -34,7 +35,8 @@ public class TestRandomUtils extends Activity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeListData();
+//                changeListData();
+                ToastUtil.showToast("here");
             }
         });
 
