@@ -8,7 +8,7 @@ import android.content.Context;
  */
 
 public class utilApp extends Application {
-    Context mContext;
+    public static Context mContext;
     public void init(Context context){
         mContext = context;
     }

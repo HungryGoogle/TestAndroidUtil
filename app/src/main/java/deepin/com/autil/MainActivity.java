@@ -6,16 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import deepin.com.autil.UtilActivitys.TestAppActivity;
-import deepin.com.autil.UtilActivitys.TestPopupDialogActivity;
-import deepin.com.autil.UtilActivitys.TestVoiceActivity;
+import deepin.com.autil.TestActivitys.TestAppActivity;
+import deepin.com.autil.TestActivitys.TestDisplayUtils;
+import deepin.com.autil.TestActivitys.TestPackageUtils;
+import deepin.com.autil.TestActivitys.TestPopupDialogActivity;
+import deepin.com.autil.TestActivitys.TestRandomUtils;
+import deepin.com.autil.TestActivitys.TestSystemUtils;
+import deepin.com.autil.TestActivitys.TestVerifyUtils;
 
 public class MainActivity extends Activity {
 
@@ -23,12 +25,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         final List<String> list=new ArrayList<String>();
-        list.add("voice");
-        list.add("popup_dialog");
-        list.add("app");
+        list.add("SystemUtils");
+        list.add("DisplayUtils");
+        list.add("VerifyUtil");
+        list.add("PackageUtils");
+        list.add("RandomUtils");
 
         ListView listView = new ListView(this);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, list));
@@ -37,14 +40,20 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (list.get(i)) {
-                    case "voice":
-                        startActivity(new Intent(getApplication(), TestVoiceActivity.class));
+                    case "SystemUtils":
+                        startActivity(new Intent(getApplication(), TestSystemUtils.class));
                         break;
-                    case "popup_dialog":
-                        startActivity(new Intent(getApplication(), TestPopupDialogActivity.class));
+                    case "DisplayUtils":
+                        startActivity(new Intent(getApplication(), TestDisplayUtils.class));
                         break;
-                    case "app":
-                        startActivity(new Intent(getApplication(), TestAppActivity.class));
+                    case "VerifyUtil":
+                        startActivity(new Intent(getApplication(), TestVerifyUtils.class));
+                        break;
+                    case "PackageUtils":
+                        startActivity(new Intent(getApplication(), TestPackageUtils.class));
+                        break;
+                    case "RandomUtils":
+                        startActivity(new Intent(getApplication(), TestRandomUtils.class));
                         break;
                     default:break;
 

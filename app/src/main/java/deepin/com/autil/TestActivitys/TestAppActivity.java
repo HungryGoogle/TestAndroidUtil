@@ -1,8 +1,6 @@
-package deepin.com.autil.UtilActivitys;
+package deepin.com.autil.TestActivitys;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +11,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import deepin.com.autil.R;
 import deepin.com.utils.AppUtils;
 
 public class TestAppActivity extends Activity {
@@ -21,7 +18,6 @@ public class TestAppActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_app);
 
         final List<String> list=new ArrayList<String>();
         list.add("getVersionName");
@@ -45,7 +41,6 @@ public class TestAppActivity extends Activity {
                         break;
 
                     default:break;
-
                 }
             }
         });

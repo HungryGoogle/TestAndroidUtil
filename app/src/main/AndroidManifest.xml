@@ -15,9 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UtilActivitys.TestVoiceActivity" />
-        <activity android:name=".UtilActivitys.TestPopupDialogActivity" />
-        <activity android:name=".UtilActivitys.TestAppActivity"></activity>
+        <activity android:name=".TestActivitys.TestVoiceActivity" />
+        <activity android:name=".TestActivitys.TestPopupDialogActivity" />
+        <activity android:name=".TestActivitys.TestAppActivity"></activity>
+        <activity android:name=".TestActivitys.TestSystemUtils"></activity>
+        <activity android:name=".TestActivitys.TestDisplayUtils"></activity>
+        <activity android:name=".TestActivitys.TestVerifyUtils"></activity>
+        <activity android:name=".TestActivitys.TestPackageUtils"></activity>
+        <activity android:name=".TestActivitys.TestRandomUtils"></activity>
     </application>
 
 </manifest>
