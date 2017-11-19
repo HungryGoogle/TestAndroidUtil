@@ -23,6 +23,10 @@
         <activity android:name=".TestActivitys.TestVerifyUtils"></activity>
         <activity android:name=".TestActivitys.TestPackageUtils"></activity>
         <activity android:name=".TestActivitys.TestRandomUtils"></activity>
+        <activity android:name=".TestActivitys.TestBase64Utils"></activity>
+        <activity android:name=".TestActivitys.TestDeviceUtils"></activity>
+        <activity android:name=".TestActivitys.TestCpuUtils"></activity>
+        <activity android:name=".TestActivitys.TestNumberUtil"></activity>
     </application>
 
 </manifest>
